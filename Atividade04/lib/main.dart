@@ -46,7 +46,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -56,53 +55,53 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(children: [
-              Expanded(
-                child: FittedBox(
-                fit: BoxFit.contain,
-                child: Image(
-                  image: NetworkImage(
-                    'https://picsum.photos/250?image=10'
-                    ),
-                    ),
-                ),
-                  ),
-                  Expanded(
-                  child: FittedBox(
-                  fit: BoxFit.contain,
-                  child: Image(
-                  image: NetworkImage(
-                  'https://picsum.photos/250?image=25',
-                  ),
-                  ),
-                  ),
-                  ),
-                  Expanded(
-                  child: FittedBox(
-                  fit: BoxFit.contain,
-                  child: Image(
-                  image: NetworkImage(
-                  'https://picsum.photos/250?image=15',
-                  ),
-                  ),
-                  ),
-                  ),
-            ],)
-          ],
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(widget.title),
         ),
-      )
-    );
+        body: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Row(
+                children: [
+                  Expanded(
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: Image(
+                        image:
+                            NetworkImage('https://picsum.photos/250?image=10'),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: Image(
+                        image: NetworkImage(
+                          'https://picsum.photos/250?image=25',
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: Image(
+                        image: NetworkImage(
+                          'https://picsum.photos/250?image=15',
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ));
   }
 }
