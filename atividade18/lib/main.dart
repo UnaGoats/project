@@ -86,7 +86,7 @@ class PrimeiraRota extends StatelessWidget {
       appBar: AppBar(
         title: Text('Primeira Rota'),
       ),
-      drawer: Drawer(
+      drawer: Container(
           child: new Container(
         color: Colors.orange,
         child: ListView(
