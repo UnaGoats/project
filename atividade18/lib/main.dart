@@ -30,20 +30,29 @@ class Tela extends StatelessWidget {
       body: Center(
         child: new ListView(
           children: [
-            new Text(
-              titulo,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.red, fontSize: 22, fontWeight: FontWeight.bold),
-            ),
-            new TextButton(
-              onPressed: () => Navigator.pop(context),
+            new Container(
+              alignment: Alignment.center,
+              padding: new EdgeInsets.all(50),
               child: new Text(
-                "Voltar para a Primeira Rota",
-                style: new TextStyle(color: Colors.white),
+                titulo,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold),
               ),
-              style: new ButtonStyle(backgroundColor: new MyColor()),
-            )
+            ),
+            new Container(
+                alignment: Alignment.center,
+                child: new TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: new Text(
+                    "Voltar para a Primeira Rota",
+                    style: new TextStyle(color: Colors.white),
+                  ),
+                  style: new ButtonStyle(backgroundColor: new MyColor(),
+                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(50)) ),
+                )),
           ],
         ),
       ),
@@ -83,9 +92,14 @@ class PrimeiraRota extends StatelessWidget {
               accountName: Text("Ana"),
               accountEmail: Text("ana@ana.com.br"),
               currentAccountPicture: CircleAvatar(
-                radius: 30.0,
-                backgroundImage: AssetImage('img/transferir.jfif'),
-                backgroundColor: Colors.transparent,
+                backgroundColor: Colors.white,
+                child: Text(
+                  "A",
+                  style: TextStyle(
+                    fontSize: 40.0,
+                    color: Colors.red,
+                  ),
+                ),
               ),
             ),
             ListTile(
