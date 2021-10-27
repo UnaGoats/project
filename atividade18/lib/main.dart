@@ -9,8 +9,8 @@ class MeuAplicativo extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => PrimeiraRota(),
-        '/segunda': (context) => Tela("Segunda Rota"),
-        '/terceira': (context) => Tela("Terceira Rota"),
+        '/segunda': (context) => Tela("Segunda Rota", Colors.blueAccent),
+        '/terceira': (context) => Tela("Terceira Rota", Colors.purple),
       },
     );
   }
@@ -18,7 +18,8 @@ class MeuAplicativo extends StatelessWidget {
 
 class Tela extends StatelessWidget {
   final String titulo;
-  Tela(this.titulo);
+  final Color color;
+  Tela(this.titulo, this.color);
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class Tela extends StatelessWidget {
       appBar: AppBar(
         title: Text(titulo),
       ),
+      backgroundColor: color,
       body: Center(
         child: new ListView(
           children: [
@@ -50,8 +52,10 @@ class Tela extends StatelessWidget {
                     "Voltar para a Primeira Rota",
                     style: new TextStyle(color: Colors.white),
                   ),
-                  style: new ButtonStyle(backgroundColor: new MyColor(),
-                  padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.all(50)) ),
+                  style: new ButtonStyle(
+                      backgroundColor: new MyColor(),
+                      padding: MaterialStateProperty.all<EdgeInsets>(
+                          EdgeInsets.all(50))),
                 )),
           ],
         ),
@@ -63,8 +67,8 @@ class Tela extends StatelessWidget {
 class MyColor extends MaterialStateColor {
   const MyColor() : super(_defaultColor);
 
-  static const int _defaultColor = 0xFF2596be;
-  static const int _pressedColor = 0xffabdbe3;
+  static const int _defaultColor = 0xFF0000FF;
+  static const int _pressedColor = 0xAA0000ff;
 
   @override
   Color resolve(Set<MaterialState> states) {
@@ -83,6 +87,8 @@ class PrimeiraRota extends StatelessWidget {
         title: Text('Primeira Rota'),
       ),
       drawer: Drawer(
+          child: new Container(
+        color: Colors.orange,
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
@@ -131,7 +137,7 @@ class PrimeiraRota extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      )),
       drawerEnableOpenDragGesture: false,
       body: Center(
         child: const Text('Corpo'),
