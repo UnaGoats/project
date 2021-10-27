@@ -8,10 +8,10 @@ class MeuAplicativo extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-          '/': (context) => PrimeiraRota(),
-          '/segunda': (context) => Tela("Segunda Rota"),
-          '/terceira': (context) => Tela("Terceira Rota"),
-        },
+        '/': (context) => PrimeiraRota(),
+        '/segunda': (context) => Tela("Segunda Rota"),
+        '/terceira': (context) => Tela("Terceira Rota"),
+      },
     );
   }
 }
@@ -34,19 +34,16 @@ class Tela extends StatelessWidget {
               titulo,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.red,
-                fontSize: 22,
-                fontWeight: FontWeight.bold
+                  color: Colors.red, fontSize: 22, fontWeight: FontWeight.bold),
+            ),
+            new TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: new Text(
+                "Voltar para a Primeira Rota",
+                style: new TextStyle(color: Colors.white),
               ),
-              ),
-              new TextButton(onPressed: () => Navigator.pop(context), 
-              child: new Text("Voltar para a Primeira Rota",
-              style: new TextStyle(
-                color: Colors.white
-              ),),
-              style: new ButtonStyle(
-                backgroundColor: new MyColor()
-              ),)
+              style: new ButtonStyle(backgroundColor: new MyColor()),
+            )
           ],
         ),
       ),
@@ -87,9 +84,7 @@ class PrimeiraRota extends StatelessWidget {
               accountEmail: Text("ana@ana.com.br"),
               currentAccountPicture: CircleAvatar(
                 radius: 30.0,
-                backgroundImage: NetworkImage(
-                  'https://flutter.github.io/assets-for-apidocs/assets/widgets/owl.jpg',
-                ),
+                backgroundImage: AssetImage('img/transferir.jfif'),
                 backgroundColor: Colors.transparent,
               ),
             ),
@@ -117,8 +112,7 @@ class PrimeiraRota extends StatelessWidget {
               subtitle: Text("Voltar para a Rota 01"),
               trailing: Icon(Icons.arrow_forward),
               onTap: () {
-                if(Navigator.canPop(context))
-                  Navigator.pop(context);
+                if (Navigator.canPop(context)) Navigator.pop(context);
               },
             ),
           ],
