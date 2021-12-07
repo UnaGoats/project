@@ -1,0 +1,4 @@
+O vídeo apresenta o básico do framework Flutter, apresentando suas funcionalidades, definições e aplicações, além de aplicar a introdução em DART.
+Exemplificando como criar um projeto do zero, seus widgets, como funciona o material design e material app.
+O vídeo também apresenta as ferramentas de teste de aplicativos, apresenta sobre a importância da identaçao num código e como afeta na estrutura do código.
+Por fim, o video ensina a criar um app do zero para iniciantes aprenderem um pouco sobre o Flutter e o DART.
